@@ -114,7 +114,7 @@ def main():
                 
                 result=predict_note_authentication(gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges)
                
-                y_pred = model_rf_smote.predict_proba([[gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges]])[0, 1]
+                y_pred = model_rf.predict_proba([[gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges]])[0, 1]
                 churn = y_pred >= 0.5
                 output_prob = float(y_pred)
                 output = bool(churn)
@@ -130,7 +130,7 @@ def main():
                 for col in data.columns:
                     if data[col].dtype == 'object':
                         data[col] = encoder.fit_transform(data[col].astype(str))
-                y_pred = model_rf_smote.predict_proba(data)[0, 1]
+                y_pred = model_rf.predict_proba(data)[0, 1]
                 churn = y_pred >= 0.5
                 output_prob = float(y_pred)
                 output = bool(churn)
