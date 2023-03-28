@@ -23,8 +23,8 @@ from PIL import Image
 
 
 
-pickle_in = open("model_rf_smote.pkl", "rb")
-model_rf_smote=pickle.load(pickle_in)
+pickle_in = open("model_rf.pkl", "rb")
+model_rf=pickle.load(pickle_in)
 
 
 def welcome():
@@ -35,7 +35,7 @@ def predict_note_authentication(gender,SeniorCitizen,Partner,Dependents,tenure,P
     
 
    
-    prediction=model_rf_smote.predict([[gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges]])
+    prediction=model_rf.predict([[gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges]])
     print(prediction)
     return prediction
 
