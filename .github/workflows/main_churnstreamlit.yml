@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'churnstreamlit'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4D03B7644611461B9A6D375D36925D2C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4B6D05765D214FB3BAF9EC3237B9AC51 }}
