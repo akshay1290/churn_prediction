@@ -80,8 +80,6 @@ def main():
         
             MonthlyCharges= st.slider('Monthly charges :', min_value=0, max_value=240, value=0)
             TotalCharges = tenure*MonthlyCharges
-            
-
             output= ""
             output_prob = ""
 
